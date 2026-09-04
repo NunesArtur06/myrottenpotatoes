@@ -1,0 +1,8 @@
+require "application_system_test_case"
+
+class MoviesTest < ApplicationSystemTestCase
+  test "visiting the index" do
+    visit movies_url
+    assert_selector "h1", text: "Todos os Filmes"
+  end
+end

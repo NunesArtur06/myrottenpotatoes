@@ -43,5 +43,4 @@ class MoviesController < ApplicationController
     flash[:notice] = "O filme '#{@movie.title}' foi excluído com sucesso."
     redirect_to movies_path
   end
-
 end

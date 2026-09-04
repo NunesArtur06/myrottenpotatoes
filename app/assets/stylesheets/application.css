@@ -1,10 +1,136 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+:root {
+  /* Colors */
+  --color-electric-lime: #faff69;
+  --color-olive-ink: #161600;
+  --color-dark-olive: #4f5100;
+  --color-lime-glow: #fbff46;
+  --color-void-black: #151515;
+  --color-carbon: #1f1f1c;
+  --color-graphite: #282828;
+  --color-slate-dark: #343434;
+  --color-iron: #3a3a3a;
+  --color-steel: #414141;
+  --color-smoke: #a0a0a0;
+  --color-fog: #bcbcbb;
+  --color-bone: #dfdfdf;
+  --color-paper: #e5e7eb;
+  --color-pure-white: #ffffff;
+  --color-true-black: #000000;
+
+  /* Fonts */
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-inconsolata: 'Inconsolata', monospace;
+
+  /* Layout & Radii */
+  --radius-inputs: 4px;
+  --radius-cards: 8px;
+  --radius-buttons: 8px;
+}
+
+/* Base Page Setup */
+body {
+  background-color: var(--color-void-black);
+  color: var(--color-paper);
+  font-family: var(--font-inter);
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+h1, h2, h3 {
+  color: var(--color-pure-white);
+  font-weight: 600;
+}
+
+/* Links */
+a {
+  color: var(--color-electric-lime);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-lime-glow);
+  text-decoration: underline;
+}
+
+/* Cards & Containers */
+.container {
+  max-width: 960px;
+}
+
+.card-rotten {
+  background-color: var(--color-carbon);
+  border: 1px solid var(--color-iron);
+  border-radius: var(--radius-cards);
+  padding: 24px;
+}
+
+/* Primary Button */
+.btn-primary, .btn-primary:focus {
+  background-color: var(--color-electric-lime) !important;
+  color: var(--color-true-black) !important;
+  border: none !important;
+  font-weight: 600;
+  border-radius: var(--radius-buttons);
+  padding: 10px 20px;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-lime-glow) !important;
+  color: var(--color-true-black) !important;
+  box-shadow: 0 0 10px var(--color-lime-glow);
+}
+
+/* Inputs & Form Controls */
+.form-control, select.form-control {
+  background-color: var(--color-void-black) !important;
+  border: 1px solid var(--color-steel) !important;
+  color: var(--color-paper) !important;
+  border-radius: var(--radius-inputs) !important;
+}
+
+.form-control:focus {
+  border-color: var(--color-electric-lime) !important;
+  box-shadow: 0 0 5px var(--color-dark-olive) !important;
+}
+
+/* Form Labels */
+.form-label, label {
+  color: var(--color-bone);
+  font-weight: 500;
+}
+
+/* Table Styling */
+.movie-list-header {
+  background-color: var(--color-carbon);
+  border-bottom: 1px solid var(--color-steel);
+  color: var(--color-pure-white);
+  padding: 12px 0;
+  font-weight: 600;
+}
+
+.movie-list-row {
+  border-bottom: 1px solid var(--color-iron);
+  padding: 12px 0;
+}
+
+.movie-list-row:hover {
+  background-color: var(--color-graphite);
+}
+
+/* Badges */
+.badge-rating {
+  background-color: var(--color-dark-olive);
+  color: var(--color-electric-lime);
+  border-radius: var(--radius-inputs);
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Flash Messages */
+.alert-info {
+  background-color: var(--color-slate-dark) !important;
+  border: 1px solid var(--color-electric-lime) !important;
+  color: var(--color-electric-lime) !important;
+  border-radius: 9999px;
+}

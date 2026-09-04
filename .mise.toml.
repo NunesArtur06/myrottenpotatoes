@@ -1,0 +1,4 @@
+[env]
+RUBYOPT = "-E utf-8:utf-8"
+LC_ALL = "C.UTF-8"
+LANG = "C.UTF-8"

@@ -1,0 +1,26 @@
+<h2>Editar Filme</h2>
+
+<%= form_tag movie_path(@movie), :method => :put, :class => 'form' do %>
+  <div class="form-group">
+    <%= label :movie, :title, 'Título', :class => 'form-label' %>
+    <%= text_field :movie, :title, :class => 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= label :movie, :rating, 'Classificação Indicativa', :class => 'form-label' %>
+    <%= select :movie, :rating, ['Livre','10','12','14','16', '18'], {}, :class => 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= label :movie, :release_date, 'Data de Lançamento', :class => 'form-label' %>
+    <%= date_select :movie, :release_date, { :start_year => 1930, :end_year => Time.now.year }, :class => 'form-control' %>    
+  </div>
+
+  <div class="form-group">
+    <%= label :movie, :description, 'Descrição', :class => 'form-label' %>
+    <%= text_area :movie, :description, :class => 'form-control' %>
+  </div>
+
+  <%= submit_tag 'Atualizar Informações do Filme', :class => 'btn btn-secondary mt-3' %>
+  <%= link_to 'Cancelar', movie_path(@movie), :class => 'btn btn-primary mt-3' %>
+<% end %>

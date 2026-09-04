@@ -1,0 +1,23 @@
+<h1>Detalhes sobre <%= @movie.title %></h1>
+
+<div id="metadata">
+  <ul id="details">
+    <li>Classificação Indicativa: <%= @movie.rating %></li>
+    <li>Data de Lançamento: <%= @movie.release_date.strftime('%d/%m/%Y') if @movie.release_date %></li>
+  </ul>
+</div>
+
+<div id="description">
+  <h2>Descrição:</h2>
+  <p><%= @movie.description %></p>
+</div>
+
+
+<div class="mt-3">
+  <%= link_to 'Editar este filme', edit_movie_path(@movie), :class => 'btn btn-secondary' %>
+  
+  <%# Botão de exclusão envia requisição DELETE %>
+  <%= button_to 'Excluir filme', movie_path(@movie), :method => :delete, :confirm => 'Tem certeza que deseja excluir?', :class => 'btn btn-danger d-inline-block' %>
+  
+  <%= link_to 'Voltar para a lista de filmes', movies_path, :class => 'btn btn-primary' %>
+</div>

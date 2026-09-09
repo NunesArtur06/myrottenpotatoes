@@ -81,12 +81,12 @@ jobs:
           bundler-cache: true
 
       - name: Run tests
-        env:
-          RAILS_ENV: test
-        run: |
-          bundle exec rails db:test:prepare
-          bundle exec rails test
-
+      env:
+        RAILS_ENV: test
+      run: |
+        bin/rails db:test:prepare
+        bin/rails test
+        
   system-test:
     runs-on: ubuntu-latest
 
@@ -106,9 +106,9 @@ jobs:
         env:
           RAILS_ENV: test
         run: |
-          bundle exec rails db:test:prepare
-          bundle exec rails test:system
-
+          bin/rails db:test:prepare
+          bin/rails test:system
+          
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
         if: failure()

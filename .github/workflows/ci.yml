@@ -65,7 +65,7 @@ jobs:
       - name: Lint code for consistent style
         run: bin/rubocop -f github
 
-  test:
+test:
     runs-on: ubuntu-latest
 
     steps:
@@ -87,7 +87,7 @@ jobs:
         bin/rails db:test:prepare
         bin/rails test
         
-  system-test:
+system-test:
     runs-on: ubuntu-latest
 
     steps:
